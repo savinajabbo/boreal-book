@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/boreal-book/static/css/main.20c19f9b.css",
+    "main.js": "/boreal-book/static/js/main.de593753.js",
+    "static/js/453.3ab1ac75.chunk.js": "/boreal-book/static/js/453.3ab1ac75.chunk.js",
+    "index.html": "/boreal-book/index.html",
+    "main.20c19f9b.css.map": "/boreal-book/static/css/main.20c19f9b.css.map",
+    "main.de593753.js.map": "/boreal-book/static/js/main.de593753.js.map",
+    "453.3ab1ac75.chunk.js.map": "/boreal-book/static/js/453.3ab1ac75.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20c19f9b.css",
+    "static/js/main.de593753.js"
+  ]
+}
