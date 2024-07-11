@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import Button from './components/Button';
+import Title from './components/Title';
+import SubmitForm from './components/SubmitForm';
+import Submissions from './components/Submissions';
 
-function App() {
+const App = () => {
+  const [showForm, setShowForm] = useState(false);
+  const [updateSubmissions, setUpdateSubmissions] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowForm(true);
+  };
+
+  const handleSubmission = () => {
+    setUpdateSubmissions(true);
+  };
+
+  useEffect(() => {
+    if (updateSubmissions) {
+      setUpdateSubmissions(false);
+    }
+  }, [updateSubmissions]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Title text="welcome to our journey" />
+      <Button onClick={handleButtonClick}>make a memory</Button>
+      {showForm && <SubmitForm onSubmission={handleSubmission} />}
+      <h2>Submissions</h2>
+      <Submissions key={updateSubmissions} />
     </div>
   );
-}
+};
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+reportWebVitals();
